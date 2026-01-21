@@ -124,7 +124,7 @@ const ConnectSection = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
-            className="glass-card p-8 rounded-2xl max-w-md w-full relative gradient-border"
+            className="glass-card p-8 rounded-2xl max-w-md w-full relative gradient-border pointer-events-none"
           >
             <button
               onClick={() => setIsResumeModalOpen(false)}
@@ -135,26 +135,29 @@ const ConnectSection = () => {
 
             <h3 className="text-2xl font-bold font-display gradient-text mb-6">My Resume</h3>
             
-            <div className="space-y-4">
-              <a
-                href="https://drive.google.com/file/d/1vqlDYyOJIWiXJxXdtLIIDegzeLsqIevk/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 w-full px-6 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25"
-              >
-                <Eye className="w-5 h-5" />
-                <span>View Resume</span>
-              </a>
-              
-              <a
-                href="https://drive.usercontent.google.com/download?id=1vqlDYyOJIWiXJxXdtLIIDegzeLsqIevk&export=download"
-                download
-                className="flex items-center gap-3 w-full px-6 py-4 rounded-xl border border-border text-foreground font-medium transition-all hover:border-primary hover:text-primary"
-              >
-                <Download className="w-5 h-5" />
-                <span>Download Resume</span>
-              </a>
-            </div>
+            <div className="space-y-4 pointer-events-auto">
+            <a
+              href="https://drive.google.com/file/d/1vqlDYyOJIWiXJxXdtLIIDegzeLsqIevk/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-3 w-full px-6 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25"
+            >
+              <Eye className="w-5 h-5" />
+              <span>View Resume</span>
+            </a>
+
+            <a
+              href="https://drive.google.com/uc?export=download&id=1vqlDYyOJIWiXJxXdtLIIDegzeLsqIevk"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-3 w-full px-6 py-4 rounded-xl border border-border text-foreground font-medium transition-all hover:border-primary hover:text-primary"
+            >
+              <Download className="w-5 h-5" />
+              <span>Download Resume</span>
+            </a>
+          </div>
           </motion.div>
         </motion.div>
       )}
