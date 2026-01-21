@@ -115,7 +115,8 @@ const ContactSection = () => {
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
               <form
-                onSubmit={handleSubmit}
+                action="https://formspree.io/f/xzddkpew"
+                method="POST"
                 className="glass-card p-8 rounded-2xl space-y-6"
               >
                 <div>
